@@ -15,7 +15,7 @@ Vue note
 
 
 > #### 2. Vue项目中使用sass时
-1. 使用方法：
+使用方法：
 
 ①安装sass-loader和node-sass，②在使用sass的style标签上添加attribute：lang='sass'或者lang='scss'，如果要外置scss文件，需要配置loader。
 
@@ -24,7 +24,12 @@ Vue note
         loaders: ["style", "css", "sass"]
     },
     
+使用sass时，注意诸如
 
+
+    font: 12px/12px '微软雅黑'
+    
+这种样式无法正确打包。应分开来设置。 
 > #### 3. 异步组件
 在做大屏工具show组件时，由于内部要显示的模块信息全部需要后台返回，所以必须采用异步组件的形式。
 
