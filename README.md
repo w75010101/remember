@@ -1,2 +1,2 @@
 # remember
-This is my note.
+note.
