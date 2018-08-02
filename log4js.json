@@ -1,0 +1,58 @@
+{
+  "appenders": {
+    "out": {
+      "type": "stdout",
+      "layout": {
+        "type": "pattern",
+        "pattern": ">>>   TIME: %[[%d{yyyy/MM/dd hh:mm:ss}]%] LEVEL: %[[%p]%] MODEL: %[[%c]%] %nmsg   %[[%m]%] %n-------------------------------------------------"
+      }
+    },
+    "start": {
+      "type": "dateFile",
+      "filename": "../logs/start.log",
+      "compress": true,
+      "daysToKeep": 30
+    },
+    "http": {
+      "type": "dateFile",
+      "filename": "../logs/http.log",
+      "compress": true,
+      "daysToKeep": 30
+    },
+    "webService": {
+      "type": "dateFile",
+      "filename": "../logs/webservice.log",
+      "compress": true,
+      "daysToKeep": 30
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [
+        "out"
+      ],
+      "level": "info"
+    },
+    "start": {
+      "appenders": [
+        "start",
+        "out"
+      ],
+      "level": "info"
+    },
+    "http": {
+      "appenders": [
+        "out",
+        "http"
+      ],
+      "level": "info"
+    },
+    "webService": {
+      "appenders": [
+        "out",
+        "webService"
+      ],
+      "level": "info"
+    }
+  }
+}
